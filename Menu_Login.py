@@ -5,8 +5,8 @@ import os
 import subprocess
 from PIL import Image, ImageTk, ImageDraw
 
-customer_data_file = "D:\\TubesProkom\\dataloginpelanggan.json"
-orders_data_file = "D:\\TubesProkom\\riwayatpesanan.json"
+customer_data_file = "C:\\Users\\dani\\Pictures\\agama\\dataloginpelanggan.json"
+orders_data_file = "C:\\Users\\dani\\Pictures\\agama\\riwayatpesanan.json"
 
 
 def sistem_JSON(username=None, password=None):
@@ -142,7 +142,7 @@ def chef_login():
 
 def show_orders():
    
-    with open("D:\\TubesProkom\\riwayatpesanan.json", 'r') as file:
+    with open("C:\\Users\\dani\\Pictures\\agama\\riwayatpesanan.json", 'r') as file:
         orders = json.load(file)
 
     # Membuat jendela baru untuk menampilkan pesanan
@@ -182,7 +182,7 @@ root = tk.Tk()
 root.title("Restoran Wenakk")
 
 # Menambahkan background
-bg_image_menu = Image.open("D:\\TubesProkom\\1.png")
+bg_image_menu = Image.open("C:\\Users\\dani\\Pictures\\agama\\images{}.png\\1.png")
 bg_image_menu = bg_image_menu.resize((root.winfo_screenwidth(), root.winfo_screenheight()))
 bg_photo_menu = ImageTk.PhotoImage(bg_image_menu)
 

@@ -6,12 +6,12 @@ import json
 from PIL import Image, ImageTk, ImageDraw
 from datetime import datetime
 
-os.environ["TCL_LIBRARY"] = r"C:\Program Files\Python313\tcl\tcl8.6"
-os.environ["TK_LIBRARY"] = r"C:\Program Files\Python313\tcl\tk8.6"
+os.environ["TCL_LIBRARY"] = r"C:\\Program Files\\Python313\\tcl\\tcl8.6"
+os.environ["TK_LIBRARY"] = r"C:\\Program Files\\Python313\\tcl\\tk8.6"
 
 
 
-JSON_FILE_PATH = "D:\\TubesProkom\\riwayatpesanan.json"
+JSON_FILE_PATH = "C:\\Users\\dani\\Pictures\\agama\\riwayatpesanan.json"
 
 
 menu_makan = {
@@ -146,7 +146,7 @@ def buka_window_menu(menu_data, title):
     canvas.pack(side=tk.LEFT, fill=tk.BOTH, expand=1)
     
     # Menambahkan background window menu
-    bg_image_menu = Image.open("D:\\TubesProkom\\3.png")
+    bg_image_menu = Image.open("C:\\Users\\dani\\Pictures\\agama\\3.png")
     bg_image_menu = bg_image_menu.resize((canvas.winfo_screenwidth(), canvas.winfo_screenheight()))
     bg_photo_menu = ImageTk.PhotoImage(bg_image_menu)
     bg_label_menu = tk.Label(canvas, image=bg_photo_menu)
@@ -166,7 +166,7 @@ def buka_window_menu(menu_data, title):
     canvas.create_window((0,0), window=frame_menu, anchor="nw")
     
     # Menambahkan background frame menu 
-    bg_image_menu = Image.open("D:\\TubesProkom\\6.png")
+    bg_image_menu = Image.open("C:\\Users\\dani\\Pictures\\agama\\6.png")
     bg_image_menu = bg_image_menu.resize((frame_menu.winfo_screenwidth(), frame_menu.winfo_screenheight()))
     bg_photo_menu = ImageTk.PhotoImage(bg_image_menu)
     bg_label_menu = tk.Label(frame_menu, image=bg_photo_menu)
@@ -179,7 +179,7 @@ def buka_window_menu(menu_data, title):
     entry_frame.pack(side=tk.LEFT, fill=tk.BOTH, expand=True, padx=10, pady=(50,0))
     
     # Menambahkan background menu
-    bg_image_menu = Image.open("D:\\TubesProkom\\6.png")
+    bg_image_menu = Image.open("C:\\Users\\dani\\Pictures\\agama\\6.png")
     bg_image_menu = bg_image_menu.resize((entry_frame.winfo_screenwidth(), entry_frame.winfo_screenheight()))
     bg_photo_menu = ImageTk.PhotoImage(bg_image_menu)
 
@@ -219,6 +219,8 @@ def buka_window_menu(menu_data, title):
     canvas_gambar = tk.Canvas(frame_canvas_gambar, width=350, height=350, highlightthickness=0, bg="#256b4a")
     canvas_gambar.pack(side=tk.RIGHT)
     
+    window_menu.mainloop()
+    
     #Variabel untuk menyimpan foto gambar
     foto_gambar = None
     
@@ -226,7 +228,7 @@ def buka_window_menu(menu_data, title):
         global foto_gambar
         try:
     
-            image_path = r"D:\\TubesProkom\\images{}.png".format(menu.lower().replace(' ', '_'))
+            image_path = r"C:\Users\dani\Pictures\agama\images{}.png".format(menu.lower().replace(' ', '_'))
             
 
             img = Image.open(image_path)
@@ -294,7 +296,7 @@ def buka_window_pembayaran():
             message_label.pack(pady=10)
 
 
-            img_path = "D:\\TubesProkom\\barcode.png" 
+            img_path = "C:\\Users\\dani\\Pictures\\agama\\barcode.png" 
             if os.path.exists(img_path):
                 img_original = Image.open(img_path)
                 img_resized = img_original.resize((290, 290))  
@@ -317,7 +319,7 @@ def buka_window_pembayaran():
 
             # Menampilkan window
             top.mainloop()
-            root.destroy()
+            window.destroy()
        
         elif metode == "Transfer Bank":
             messagebox.showinfo("Pembayaran Transfer", 
@@ -490,7 +492,7 @@ screen_width = window.winfo_screenwidth()
 screen_height = window.winfo_screenheight()
 
 # Membuat background window utama
-bg_image = Image.open("D:\\TubesProkom\\2.png")
+bg_image = Image.open("C:\\Users\\dani\\Pictures\\agama\\images.png\\2.png")
 bg_image = bg_image.resize((screen_width, screen_height))  
 bg_photo = ImageTk.PhotoImage(bg_image)
 bg_label = tk.Label(window, image=bg_photo)
@@ -511,6 +513,7 @@ btn_minum = tk.Button(frame_buttons, text="Menu Minum", font=("Arial", 14),
                       command=lambda: buka_window_menu(menu_minum, "Menu Minum"), 
                       width=20, bg="#fafaf0", fg="#256b4a")
 btn_minum.pack(side=tk.RIGHT, padx=5, anchor="nw")
+
 
 # Frame daftar pesanan window utama
 frame_pesanan = tk.Frame(window, pady=10, bg="#fafaf0")
