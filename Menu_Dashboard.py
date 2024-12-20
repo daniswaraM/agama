@@ -226,7 +226,7 @@ def buka_window_menu(menu_data, title):
         global foto_gambar
         try:
     
-            image_path = r"C:\\Users\\dani\\Pictures\\agama\\foto_menu\\{}.png".format(menu.lower().replace(' ', '_'))
+            image_path = r"C:\\Users\\dani\\Pictures\\agama\\foto_{}.png".format(menu.lower().replace(' ', '_'))
 
             img = Image.open(image_path)
             img = img.resize((350, 350))
@@ -258,7 +258,8 @@ def buka_window_menu(menu_data, title):
                          command=lambda: [entry.delete(0, tk.END) for entry in entry_fields.values()],
                          bg="#256b4a", fg="#fafaf0")
     btn_reset.pack(side=tk.LEFT, padx=5)
-
+    
+    tampilkan_gambar("menu_anda")
 
 
 def hitung_total_pesanan():
@@ -471,7 +472,7 @@ def tampilkan_pesanan():
         canvas_pesanan.configure(scrollregion=canvas_pesanan.bbox("all"))
     else:
         tk.Label(frame_pesanan, text="Belum ada pesanan.", font=("Arial", 12),bg="#256b4a", fg="#fafaf0").pack()
-        
+    
 
 def reset_pesanan():
     global pesanan
