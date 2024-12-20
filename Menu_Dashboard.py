@@ -13,7 +13,6 @@ os.environ["TK_LIBRARY"] = r"C:\\Program Files\\Python313\\tcl\\tk8.6"
 
 JSON_FILE_PATH = "C:\\Users\\dani\\Pictures\\agama\\riwayatpesanan.json"
 
-
 menu_makan = {
     "GADO-GADO": 12000,
     "LOTEK": 12000,
@@ -146,7 +145,7 @@ def buka_window_menu(menu_data, title):
     canvas.pack(side=tk.LEFT, fill=tk.BOTH, expand=1)
     
     # Menambahkan background window menu
-    bg_image_menu = Image.open("C:\\Users\\dani\\Pictures\\agama\\3.png")
+    bg_image_menu = Image.open("C:\\Users\\dani\\Pictures\\agama\\images.png\\3.png")
     bg_image_menu = bg_image_menu.resize((canvas.winfo_screenwidth(), canvas.winfo_screenheight()))
     bg_photo_menu = ImageTk.PhotoImage(bg_image_menu)
     bg_label_menu = tk.Label(canvas, image=bg_photo_menu)
@@ -166,7 +165,7 @@ def buka_window_menu(menu_data, title):
     canvas.create_window((0,0), window=frame_menu, anchor="nw")
     
     # Menambahkan background frame menu 
-    bg_image_menu = Image.open("C:\\Users\\dani\\Pictures\\agama\\6.png")
+    bg_image_menu = Image.open("C:\\Users\\dani\\Pictures\\agama\\images.png\\6.png")
     bg_image_menu = bg_image_menu.resize((frame_menu.winfo_screenwidth(), frame_menu.winfo_screenheight()))
     bg_photo_menu = ImageTk.PhotoImage(bg_image_menu)
     bg_label_menu = tk.Label(frame_menu, image=bg_photo_menu)
@@ -179,7 +178,7 @@ def buka_window_menu(menu_data, title):
     entry_frame.pack(side=tk.LEFT, fill=tk.BOTH, expand=True, padx=10, pady=(50,0))
     
     # Menambahkan background menu
-    bg_image_menu = Image.open("C:\\Users\\dani\\Pictures\\agama\\6.png")
+    bg_image_menu = Image.open("C:\\Users\\dani\\Pictures\\agama\\images.png\\6.png")
     bg_image_menu = bg_image_menu.resize((entry_frame.winfo_screenwidth(), entry_frame.winfo_screenheight()))
     bg_photo_menu = ImageTk.PhotoImage(bg_image_menu)
 
@@ -223,13 +222,11 @@ def buka_window_menu(menu_data, title):
     
     #Variabel untuk menyimpan foto gambar
     foto_gambar = None
-    
     def tampilkan_gambar(menu):
         global foto_gambar
         try:
     
-            image_path = r"C:\Users\dani\Pictures\agama\images{}.png".format(menu.lower().replace(' ', '_'))
-            
+            image_path = r"C:\\Users\\dani\\Pictures\\agama\\foto_menu\\{}.png".format(menu.lower().replace(' ', '_'))
 
             img = Image.open(image_path)
             img = img.resize((350, 350))
@@ -296,7 +293,7 @@ def buka_window_pembayaran():
             message_label.pack(pady=10)
 
 
-            img_path = "C:\\Users\\dani\\Pictures\\agama\\barcode.png" 
+            img_path = "C:\\Users\\dani\\Pictures\\agama\\images.png\\barcode.png" 
             if os.path.exists(img_path):
                 img_original = Image.open(img_path)
                 img_resized = img_original.resize((290, 290))  
@@ -324,7 +321,7 @@ def buka_window_pembayaran():
         elif metode == "Transfer Bank":
             messagebox.showinfo("Pembayaran Transfer", 
                           "Silakan transfer ke:\nBank BNI: 1333475027\n"
-                          f"a.n. Resto Wenaak\nTotal: Rp{total:,}")
+                          f"a.n. Sekertariat Kleca\nTotal: Rp{total:,}")
         elif metode == "Cash":
             messagebox.showinfo("Pembayaran Cash", 
                           f"Silahkan menuju ke kasir, total yang harus dibayar: Rp{total:,}")
@@ -345,7 +342,7 @@ def buka_window_pembayaran():
              font=("Arial", 14), bg="#256b4a", fg="#fafaf0").pack(pady=(120,40))
     
     # Menambahkan background window pembayaran
-    bg_image_payment = Image.open("D:\\TubesProkom\\5.png")
+    bg_image_payment = Image.open("C:\\Users\\dani\\Pictures\\agama\\images.png\\5.png")
     bg_image_payment = bg_image_payment.resize((window_payment.winfo_screenwidth(), window_payment.winfo_screenheight()))
     bg_photo_payment = ImageTk.PhotoImage(bg_image_payment)
 
